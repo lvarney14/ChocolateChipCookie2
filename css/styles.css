@@ -1,7 +1,21 @@
 /*==============================
 	Global
 ==============================*/
+p {
+	line-height: 24px;
+}
+/*--Lane narrow typography- */
+@font-face {
+    font-family: 'lane_-_narrowregular';
+    src: url('../fonts/LANENAR_-webfont.eot');
+    src: url('../fonts/LANENAR_-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/LANENAR_-webfont.woff') format('woff'),
+         url('../fonts/LANENAR_-webfont.ttf') format('truetype'),
+         url('../fonts/LANENAR_-webfont.svg#lane_-_narrowregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
+}
 
 /*==============================
 	Structure & Layout 
@@ -11,28 +25,32 @@
 	width: 960px;
 }
 
+/* Push down content below navigation */
+article {
+	padding-top: 200px;
+}
 
 /*==============================
 	Logo
 ==============================*/
 header h1 a {
-	background: #ccc url("../img/logo.png");
-
+	background: #ccc url("../img/logo.png") no-repeat center center;
+	border-radius: 150px;
 	border: 4px solid #fff;
 	display: block;
 	height: 150px;
 	left: 40px;
 	position: absolute;
-
+	text-indent: -999em;
 	width: 150px;
-
+	z-index: 2;
 	
 	/* CSS 3*/
-
+	transition: background-color 1s;
 }
 
 header h1 a:hover {
-	background: #666;
+	background: #666 url("../img/logo.png") no-repeat center center;
 }
 
 
@@ -40,7 +58,7 @@ header h1 a:hover {
 	Navigation
 ==============================*/
 header {
-
+	position: relative;
 }
 
 header li {
@@ -51,24 +69,24 @@ header li {
 
 /* Remove inherited margin on <ul> */
 header ul {
-
+	margin: 0;
 }
 
 /* Push links far right w/o floats */
-nav li {
+nav li:nth-child(1) {
 	margin-left: 450px;
 }
 
 nav {
 	background: #666;	
 	height: 64px;
-
+	position: absolute;
 	left: 0;
 	top: 42px;
 	width: 960px;
 	
 	/* CSS3 */
-
+	box-shadow: inset 0px 0px 10px 2px #333;
 }
 
 nav a:link,
@@ -76,14 +94,14 @@ nav a:visited {
 	color: #fff;
 	height: 64px;
 	display: block;
-
+	line-height: 64px;
 	text-align: center;	
 	text-decoration: none;
 	text-transform: uppercase;
 	width: 128px;
 	
 	/*CSS 3*/
-
+	transition: margin-top .25s;
 }
 
 nav a:hover, 
@@ -92,12 +110,13 @@ nav a:active {
 }
 
 
+
 /*==============================
 	Navigation: Page Indicators
 ==============================*/
-.about, 
-.students,
-.contact {
+.about li:nth-child(1), 
+.students li:nth-child(2),
+.contact li:nth-child(3){
 	background: rgba(255,255,255,.15);
 }
 
@@ -112,6 +131,7 @@ nav a:active {
 }
 
 .about section h2 {
+	font-family: 'lane_-_narrowregular' , sans-serif;
 	margin-left: -40px;
 }
 
@@ -119,10 +139,10 @@ nav a:active {
 	Students Page
 ==============================*/
 .members li {
-
+	float: left;
 	list-style: none;
 	margin: 20px 0 0 20px;
-
+	position: relative;
 	width: 440px;
 }
 
@@ -132,10 +152,10 @@ nav a:active {
 	color: #fff;
 	left: -20px;
 	padding: 10px;
-
+	position: absolute;
 	
 	/* CSS 3*/
-
+	box-shadow: 0 10px 20px #222;
 }
 
 /* Ribbon Triangle */
@@ -148,7 +168,8 @@ nav a:active {
 	border-color: #333 transparent transparent transparent;
 	bottom: -39px;
 	border-width: 20px;
-
+	z-index: -1;
+	
 }
 
 .members img {
@@ -169,10 +190,51 @@ nav a:active {
 	padding: 10px 4px;
 }
 
-.contact tr  {
+.contact tr:nth-child(even)  {
 	background: #ccc;
 }
 
 label {
+	display: block;
+}
 
+/*==============================
+	Gallery
+==============================*/
+
+.gallery .control-button {
+  color: #ccc;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.gallery .control-button:hover {
+  color: white;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/*
+	Theme controls how everything looks in Gallery CSS.
+*/
+.gallery {
+  position: relative;
+}
+.gallery .item {
+  height: 400px;
+  overflow: hidden;
+  text-align: center;
+  background: #4d87e2;
+}
+.gallery .controls {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+.gallery .control-button {
+  display: inline-block;
+  margin: 0 .02em;
+  font-size: 3em;
+  text-align: center;
+  text-decoration: none;
+  transition: color .1s;
 }
