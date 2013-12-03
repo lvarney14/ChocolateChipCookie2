@@ -6,12 +6,12 @@ p {
 }
 /*--Lane narrow typography- */
 @font-face {
-    font-family: 'lane_-_narrowregular';
+    font-family: 'lane_-_narrowbold';
     src: url('../fonts/LANENAR_-webfont.eot');
     src: url('../fonts/LANENAR_-webfont.eot?#iefix') format('embedded-opentype'),
          url('../fonts/LANENAR_-webfont.woff') format('woff'),
          url('../fonts/LANENAR_-webfont.ttf') format('truetype'),
-         url('../fonts/LANENAR_-webfont.svg#lane_-_narrowregular') format('svg');
+         url('../fonts/LANENAR_-webfont.svg#lane_-_narrowbold') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -36,7 +36,7 @@ article {
 header h1 a {
 	background: #ccc url("../img/logo.png") no-repeat center center;
 	border-radius: 150px;
-	border: 4px solid #fff;
+	border: 4px solid #0CF;
 	display: block;
 	height: 150px;
 	left: 40px;
@@ -78,7 +78,7 @@ nav li:nth-child(1) {
 }
 
 nav {
-	background: #666;	
+	background: #630;	
 	height: 64px;
 	position: absolute;
 	left: 0;
@@ -86,7 +86,7 @@ nav {
 	width: 960px;
 	
 	/* CSS3 */
-	box-shadow: inset 0px 0px 10px 2px #333;
+	box-shadow: inset 0px 0px 10px 2px #0CF;
 }
 
 nav a:link,
@@ -115,11 +115,26 @@ nav a:active {
 	Navigation: Page Indicators
 ==============================*/
 .about li:nth-child(1), 
-.students li:nth-child(2),
-.contact li:nth-child(3){
+.variants li:nth-child(2),
+.recipe li:nth-child(3){
 	background: rgba(255,255,255,.15);
 }
 
+/*==============================
+	 Index page
+==============================*/
+.item h3 {
+	color: #630;
+}
+
+.home h1 {
+	color: #630;
+	text-align: center;
+}
+.item img {
+	height: 300px;
+	width: 350px;
+}
 
 /*==============================
 	About Page
@@ -131,14 +146,14 @@ nav a:active {
 }
 
 .about section h2 {
-	font-family: 'lane_-_narrowregular' , sans-serif;
+	font-family: 'lane_-_narrowbold' , sans-serif;
 	margin-left: -40px;
 }
 
 /*==============================
-	Students Page
+	Variants Page
 ==============================*/
-.members li {
+.logos li {
 	float: left;
 	list-style: none;
 	margin: 20px 0 0 20px;
@@ -146,8 +161,8 @@ nav a:active {
 	width: 440px;
 }
 
-.members h3 {
-	background: #666;
+.logos h3 {
+	background: #0CF;
 	bottom: 20px;
 	color: #fff;
 	left: -20px;
@@ -158,8 +173,12 @@ nav a:active {
 	box-shadow: 0 10px 20px #222;
 }
 
+.logos h2 {
+	font-weight: bold;
+}
+
 /* Ribbon Triangle */
-.members h3:after {
+.logos h3:after {
 	content: "";
 	position: absolute;
 	display: block;
@@ -172,26 +191,34 @@ nav a:active {
 	
 }
 
-.members img {
+.logos img {
 	width: 420px;
+	height: 300px;
 }
 
 
 /*==============================
-	Contact Page
+	Recipe Page
 ==============================*/
-.contact article section {
+.recipe article section {
 	float: left;
-	margin-left: 10px;
+	margin-left: 125px;
 	width: 310px;
 }
 
-.contact td {
-	padding: 10px 4px;
+.recipe h1 {
+	text-align: center;
+	color:#630;
 }
 
-.contact tr:nth-child(even)  {
-	background: #ccc;
+.recipe h3 {
+	color: #0CF;
+}
+
+.recipe blockquote {
+	text-align: center;
+	color: #0CF;
+	font-size: 30px;
 }
 
 label {
@@ -203,8 +230,11 @@ label {
 ==============================*/
 
 .gallery .control-button {
-  color: #ccc;
-  color: rgba(255, 255, 255, 0.4);
+  color: white;
+  background-color: #0CF;
+  height: .25em;
+  background-border: #630;
+  
 }
 
 .gallery .control-button:hover {
@@ -222,7 +252,7 @@ label {
   height: 400px;
   overflow: hidden;
   text-align: center;
-  background: #4d87e2;
+ ;
 }
 .gallery .controls {
   position: absolute;
@@ -237,4 +267,5 @@ label {
   text-align: center;
   text-decoration: none;
   transition: color .1s;
+  
 }
